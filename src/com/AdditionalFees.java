@@ -20,5 +20,4 @@ public enum AdditionalFees {
     public int getFee() {
         return fee;
     }
-
 }

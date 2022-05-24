@@ -32,5 +32,4 @@ public enum BankCode {
         }
         return null;
     }
-
 }
