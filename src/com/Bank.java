@@ -1,7 +1,6 @@
 package com;
 import lombok.*;
 import org.iban4j.Iban;
-
 import java.util.ArrayList;
 import java.util.Locale;
 

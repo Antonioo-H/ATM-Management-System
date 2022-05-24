@@ -1,5 +1,4 @@
 package com;
-
 import lombok.*;
 
 @AllArgsConstructor

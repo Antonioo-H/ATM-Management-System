@@ -1,5 +1,4 @@
 package com;
-
 import org.iban4j.Iban;
 
 public interface Actions {

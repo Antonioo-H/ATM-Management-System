@@ -1,7 +1,5 @@
 package com;
-
 import lombok.*;
-
 import java.util.Random;
 
 @NoArgsConstructor

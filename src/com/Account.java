@@ -1,5 +1,4 @@
 package com;
-
 import lombok.*;
 import org.iban4j.Iban;
 
