@@ -1,4 +1,4 @@
-package com;
+package com.model;
 
 import lombok.*;
 import org.iban4j.CountryCode;
@@ -36,7 +36,7 @@ public class BankBranch implements Cloneable {
         c.setTime(date);
         c.add(Calendar.YEAR, 4);
         date = c.getTime();
-        Card newCard = new Card(BankCode.getEnumByString(bankCode.toUpperCase()),account.getIban().getAccountNumber(),client.getSurname() + " " + client.getFirstName(), formatter.format(date), "074", "1234");
+        Card newCard = new Card(BankCode.getEnumByString(bankCode.toUpperCase()),generateIDCard(),client.getSurname() + " " + client.getFirstName(), formatter.format(date), BankBranch.generateCvv(), "1234");
         return (Card) newCard.clone();
     }
 
@@ -112,6 +112,40 @@ public class BankBranch implements Cloneable {
             }
         }
         return null;
+    }
+
+    public Card findCardByID(String ID) {
+
+        for(confidentialInformation iterator : database) {
+            if(iterator.card.getCardNumber().equals(ID)) {
+                return iterator.card;
+            }
+        }
+        return null;
+    }
+
+    public static String generateTelephone() {
+        Random random = new Random();
+
+        return "07" + random.nextInt(10000000, 100000000);
+    }
+
+    public static String generateIDCard() {
+        Random random = new Random();
+
+        return Long.toString(random.nextLong(1000000000000000L, 10000000000000000L)); // 16 digits
+    }
+
+    public static String generatePinCode() {
+        Random random = new Random();
+
+        return Integer.toString(random.nextInt(1000, 10000)); // 4 digits
+    }
+
+    public static String generateCvv() {
+        Random random = new Random();
+
+        return Integer.toString(random.nextInt(100, 1000)); // 3 digits
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com;
+package com.model;
 
 import lombok.*;
 import org.iban4j.Iban;
