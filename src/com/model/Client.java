@@ -16,6 +16,10 @@ public class Client {
     private String telephone;
     private String email;
 
+    public boolean getSex() {
+        return sex;
+    }
+
     @Override
     public String toString() {
         return "\nClient{" +

@@ -6,7 +6,7 @@ import lombok.*;
 @Setter
 @EqualsAndHashCode
 @ToString
-public class ATM {
+public class ATM{
 
     private Address location;
     private double amountOfCashDisponible;
@@ -27,4 +27,5 @@ public class ATM {
     public void runATM() {
         this.amountOfCashDisponible = menu.application(this.bankCode,this.amountOfCashDisponible);
     }
+
 }
